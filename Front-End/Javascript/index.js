@@ -1,13 +1,5 @@
 
-const images = ['../images/slider1.jpg', '../images/slider2.jpg', '../images/slider3.jpg', '../images/slider4.jpg', '../images/slider5.jpg', '../images/slider6.jpg'];
-
-const sliderTime = 3000;
-let sliderIndex = 0;
-
 const productsContainer = document.getElementById('products')
-
-
-
 
 const productApi = fetch('https://fakestoreapi.com/products')
 productApi
@@ -40,17 +32,3 @@ function productsArray(product){
     </div>
     `
 }
-
-function sliderImagesChange(){
-
-    const imagesContainer = document.getElementById('headerImagesSlider')
-    imagesContainer.innerHTML = `<img src="${images[sliderIndex]}">`
-    if(sliderIndex < images.length -1){ // 0 1
-        sliderIndex ++
-        
-    }else{
-        sliderIndex = 0
-    }
-}
-sliderImagesChange()
-setInterval(sliderImagesChange, sliderTime);
