@@ -1,0 +1,305 @@
+/* google poppins fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    border: none;
+    outline: none;
+}
+:root{
+    --text-color: #ffffff;
+    --nav-color: #151e32;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    width: 100%;
+    font-family: "poppins", serif;
+    background: #fafafa;
+    cursor: default;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.navigation{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 2rem;
+    background-color: var(--nav-color);
+    color: var(--text-color);
+}
+.navigation .logo a h2{
+    font-size: 2rem;
+    color: var(--text-color);
+}
+.searchBox-nav{
+
+   
+}
+
+.searchBox-nav form input{
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+}
+.navigation-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.4rem;
+}
+.navigation-link > li > a{
+    color: #ffffff;
+    padding: 0.2rem ;
+    border-bottom: 1px solid var(--text-color);
+    border: transparent;
+    transition: all 0.3s ease-in-out;
+}
+.navigation-link > li > a:hover{
+    border-bottom: 1px solid var(--text-color) ;
+}
+#check-box{
+    display: none;
+}
+.short-menu{
+    color: var(--text-color);
+    font-size: 1.5rem;
+    display: none;
+    cursor: pointer;
+}
+
+.searchBox-phone{
+    display: none;
+}
+
+/* footer section code  */
+.footer{
+    width: 100%;
+   background-color: var(--nav-color);
+}
+.footer .payments-systems{
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    padding: 1rem 0;
+}
+.payments-systems h2{
+    color: var(--text-color);
+    padding-bottom: 1em;
+    
+}
+.payment-method-img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 2rem;
+}
+.payments-systems .payment-method-img img{
+    width: 100px;
+    height: 40px;
+}
+.footer .main-footer{
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    grid: 1rem;
+    padding: 1rem;
+}
+.left-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+}
+.left-footer, .right-footer{
+    width: 45%;
+}
+.category h2, .service h2{
+    border-bottom: 1px solid var(--text-color);
+    margin-bottom: 1rem;
+}
+.category a, .service a{
+    color: var(--text-color);
+    display: block;
+    margin: 0.2rem;
+    transition: all 0.3s ease-in;
+}
+.category a:hover, .service a:hover{
+    text-decoration: underline;
+}
+.right-footer .footer-contacts > h2{
+    border-bottom: 1px solid var(--text-color);
+    margin-bottom: 1rem;
+}
+.footer-contacts .social-media{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.social-media i{
+    font-size: 1.2rem;
+    background-color: var(--text-color);
+    color: black;
+    padding: 0.4rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.social-media i:hover{
+    transform: scale(1.1);
+}
+.footer-contacts .footer-sign-up{
+    margin-top: 1rem;
+}
+#footer-form{
+    width: auto;
+    max-width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: start;
+}
+#footer-email, #footer-send-email{
+    padding: 0.4rem 1rem;
+}
+#footer-email{
+    min-width: 50%;
+}
+#footer-send-email{
+    width: 25%;
+    cursor: pointer;
+}
+
+.copyRight{
+    color: var(--text-color);
+    text-align: center;
+    padding: 2rem;
+}
+
+
+
+/* responsive  */
+
+@media only screen and (max-width: 600px){
+    .navigation-link{
+        position: fixed;
+        background-color: black;
+        width: 100vw;
+        height: fit-content;
+        top: 4rem;
+        left: 100%;
+        padding: 1rem 0;
+        flex-direction: column;
+        justify-content: center;
+        transition: left 0.3s ease-in-out;
+    }
+    .short-menu{
+        display: block;
+    }
+
+    #check-box:checked ~ .menu-label .short-menu::before{
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f00d";
+    }
+    #check-box:checked ~ .navigation-link{
+        left: 0%;
+        background-color: black;
+    }
+    .searchBox-nav form {
+        display: none;
+    }
+
+    .searchBox-phone{
+        width: 100%;
+        display: block;
+    }
+    .searchBox-phone form{
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .searchBox-phone form input{
+        padding: 0.4rem 1rem;
+        font-size: 1.2rem;
+        border: 5px solid #dddeee;
+        display: inline-block;
+    }
+    #searchBox-phone{
+        width: 100%;
+    }
+    /* footer section code  */
+    .footer .main-footer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .left-footer{
+        width: 100%;
+        margin: 1rem 0;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .category, .service{
+        width: 100%;
+    } 
+    .right-footer{
+        width: 100%;
+    }
+    .footer-contacts > h2{
+        text-align: center;
+    }
+    .footer-contacts .social-media{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    #footer-form{
+        min-width:100%;
+        justify-content: center;
+    }
+    #footer-email{
+        min-width: 70%;
+    }
+    #footer-send-email{
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px){
+    .searchBox-nav form{
+        display: none;
+    }
+    .searchBox-phone{
+        width: 100%;
+        display: block;
+    }
+    .searchBox-phone form{
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .searchBox-phone form input{
+        padding: 0.4rem 1rem;
+        font-size: 1.2rem;
+        border: 5px solid #dddeee;
+        display: inline-block;
+    }
+    #searchBox-phone{
+        width: 100%;
+    }
+}
