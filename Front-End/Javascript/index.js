@@ -1,26 +1,60 @@
 
-const productsContainer = document.getElementById('products')
+// Globals
+const productsDisplay = document.getElementById('products')
+let allProducts = []
 
-const productApi = fetch('https://fakestoreapi.com/products')
-productApi
-.then(res => res.json())
-.then(data => {
+window.onload = () => {
+    main()
 
-    const products = data;
-    productsContainer.innerHTML = '';
-    products.forEach((product) => {
-        productsArray(product)
+    // default calls 
+    getData()
+}
+
+function main(){
+
+    //DOM References
+    const largeDeviceSearchBox = document.getElementById('largeDeviceSearchBox')
+    const smallDeviceSearchBox = document.getElementById('smallDeviceSearchBox')
+    
+
+
+    //Event Listener
+    largeDeviceSearchBox.addEventListener('submit', (event) => handleSearchResult(event))
+    smallDeviceSearchBox.addEventListener('submit', (event) => handleSearchResult(event))
+
+} // End
+
+// Handle Event Listener
+function handleSearchResult(event){
+    event.preventDefault()
+    const searchVale = event.target.searchBox.value.toLowerCase()
+    
+    const searchResults = allProducts.filter((product) => {
+
+        const productTitle = product.title.toLowerCase()
+        return productTitle.includes(searchVale)
+        
     })
-})
+    searchProductsDisplay(searchResults)
+}
 
-function productsArray(product){
-    const {id, image, category, description, price, title} = product
-    const shortTitle = title.slice(0, 25) + '...';
-    const star = product.rating.rate
-    const review = product.rating.count
+
+// DOM function
+
+/**
+ * fetching data display in home page dynamically
+ * @param {Object} product 
+ */
+function dynamicProducts(product){
+    const {category, description, id, image, price, rating, title} = product
     
-    productsContainer.innerHTML += `
-    
+    const shortTitle = title.slice(0, 30) + '...'
+    const star = rating.rate
+    const review = rating.count
+
+
+    productsDisplay.innerHTML += `
+
     <div class="product">
     <img src="${image}" alt="">
     <h4>${shortTitle}</h4>
@@ -31,4 +65,38 @@ function productsArray(product){
     <span>$${price}</span>
     </div>
     `
+}
+
+
+
+//Units Function
+
+/**
+ * api data fetching
+ */
+async function getData(){
+    const url = 'https://fakestoreapi.com/products'
+    try{
+        const response = await fetch(url)
+        if(!response.ok){
+            throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        const data = await response.json()
+        const products = await data
+        productsDisplay.innerHTML = '';
+        products.forEach((product) => {
+            allProducts = products
+            dynamicProducts(product)
+        })
+       
+    }catch(error){
+        console.error("Error fetching data", error.message)
+    }
+}
+
+function searchProductsDisplay(searchResults){
+    productsDisplay.innerHTML = '';
+    searchResults.forEach((product) => {
+        dynamicProducts(product)
+    })
 }
