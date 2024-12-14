@@ -18,40 +18,57 @@
     <header>
         <nav class="navigation">
             <div class="logo"><a href="index.html"><h2>Amla</h2></a></div>
+            
+            <!-- search box for large device  -->
             <div class="searchBox-nav">
-                <form action="" class="search-input " id="nav-search-bar">
+                <form action="" class="search-input" id="largeDeviceSearchBox">
                     <input type="search" name="searchBox" id="searchBox" placeholder="Search...">
-                <input type="submit" value="Search" class="nav-search-button">
+                    <input type="submit" value="Search" class="nav-search-button">
                 </form>
             </div>
+
+            <!-- for navigation responsive  -->
             <input type="checkbox" name="" id="check-box">
             <label for="check-box" class="menu-label"><i class="fa-solid fa-bars short-menu"></i></label>
+            <!-- navigation link  -->
             <ul class="navigation-link">
+
                 <li><a href="index.html">Home</a></li>
                 <li><a class="active" href="products.html">Products</a></li>
                 <li class="category-submenu-parent"><a href="#">Categories</a>
+
+                    <!-- for sub category  -->
                     <ul class="category-menu">
                         <li><a href="">men's clothing</a></li>
                         <li><a href="">women's clothing</a></li>
-                        <li><a href="">jewelery</a></li>
+                        <li><a href="">jewelry</a></li>
                         <li><a href="">electronics</a></li>
                     </ul>
+                    
                 </li>
+
                 <li><a href="dashborad.html">Dashboard</a></li>
             </ul>
         </nav>
+
+        <!-- search box for small device  -->
         <div class="searchBox-phone">
-            <form action="" id="mobile-search-bar">
+            <form action="" id="smallDeviceSearchBox">
                 <input type="search" name="searchBox" id="searchBox-phone" placeholder="Search...">
             <input type="submit" value="Search">
             </form>
         </div>
-        <!-- header images slider  -->
-         <!-- <div class="header-images-slider" id="headerImagesSlider"> -->
-            
-         </div>
+        <div id="headerImagesSlider">
+            <!-- header images slider  -->
+             <!-- <div class="header-images-slider" id="headerImagesSlider"> -->
+        </div>
+
     </header>
-    <main>
+    <main class="main">
+
+        <section class="products" id="products">
+            <!-- here display all dynamic products  -->
+        </section>
 
     </main>
     <footer class="footer">
