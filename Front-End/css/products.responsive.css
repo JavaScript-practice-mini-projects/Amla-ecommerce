@@ -3,13 +3,22 @@
     --nav-color: #151e32;
     --transition: all 0.3s ease;
 }
-.products{
+.first-section > h2{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.latestProducts{
+    border: 2px solid gray;
+}
+.products, .latestProducts{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     margin: 1rem 0;
+    padding: 0.4rem;
 }
 .product{
     width: 200px;
